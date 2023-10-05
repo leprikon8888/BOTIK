@@ -1,0 +1,9 @@
+iphone 15;128gb;1100$
+iphone 15;256gb;1200$
+iphone 15Pro;256gb;1400$
+iphone 14ProMax;512gb;1100$
+iphone 14;256gb;900$
+iphone 14Pro;256gb;1000$
+iphone 13ProMax;512gb;900$
+iphone 13;256gb;700$
+iphone 13Pro;256gb;800$

@@ -1,0 +1,8 @@
+Samsung55;4k;1000$
+Samsung45;4k;800$
+Samsung32;2k;500$
+Xiaomi55;4k;800$
+Xiaomi40;4k;600$
+Xiaomi32;2k;500$
+Xiaomi55;2k;700$
+Xiaomi40;2k;550$
