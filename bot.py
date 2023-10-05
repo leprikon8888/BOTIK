@@ -1,9 +1,9 @@
 import telebot
 from telebot import types
 
-token = '6559402688:AAEQi3czSbAc5SOQztaCvrAm8ctqf1pM2F0'
+token = '6559402688:AAEQi3czSbAc5SOQztaCvrAm8ctqf1pM2F0'  #зареєструй свого бота і сюди вставь його токен
 
-alex = telebot.TeleBot(token)
+alex = telebot.TeleBot(token) #ім'я мого бота
 
 keyboard_menu = types.ReplyKeyboardMarkup(resize_keyboard=True)
 tovar = types.KeyboardButton('Товари📋')
@@ -12,7 +12,7 @@ contacts = types.KeyboardButton('Контакти✉️')
 keyboard_menu.add(tovar, cart, contacts)
 
 
-@alex.message_handler(commands=['start'])
+@alex.message_handler(commands=['start']) #отработка при запуску
 def start(message):
     alex.send_message(message.chat.id, 'Головне меню', reply_markup=keyboard_menu)
     new_order = open(f'orders/new_order_{message.chat.id}.txt', 'w')
@@ -103,6 +103,7 @@ def check_order(message):
             total_price += int(text_pars[2].replace('$', '')) #додаємо до загальної суми вартість товару
             message_text2 += f'{text_pars[0]} - {text_pars[1]}, ціна: {text_pars[2]}\n' #гарно виводимо дані у текст повідомлення
     message_text2 += f'\nЗагальна сума - {total_price}$\n'
-    alex.send_message(-4036524456, f'Нове замовлення. \n{message_text2}\nНомер телефону; {message.text}')
+    chat = -4036524456   #сюди треба вставити чат id, цю группу бот буде відправляти ввсі оформленні замовлення для обробки
+    alex.send_message(chat, f'Нове замовлення. \n{message_text2}\nНомер телефону: {message.text}')
 
-alex.polling(none_stop=True, interval=0)
+alex.polling(none_stop=True, interval=0)  #графік роботи бота
